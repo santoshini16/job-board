@@ -6,3 +6,20 @@ body{
   @apply text-gray-800;
   @apply bg-slate-950;
 }
+.radio-item {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+}
+
+.radio-item[data-state="checked"] {
+  background-color: #4f46e5; /* Change to your desired checked color */
+}
+
+.radio-item:hover {
+  border-color: #4f46e5;
+}
