@@ -1,16 +1,20 @@
-import Image from "next/image";
-import Hero from "./components/Hero";
-import Jobs from "./components/Jobs";
-import {withAuth,getSignInUrl,getSignUpUrl} from "@workos-inc/authkit-nextjs";
+import Hero from "@/app/components/Hero";
+import Jobs from "@/app/components/Jobs";
+import {addOrgAndUserData, JobModel} from "@/models/Job";
+import {withAuth} from "@workos-inc/authkit-nextjs";
+import mongoose from "mongoose";
 
 export default async function Home() {
   const {user} = await withAuth();
-  const signInUrl = await getSignInUrl();
-  const signUpUrl = await getSignUpUrl();
+  await mongoose.connect(process.env.MONGO_URI as string);
+  const latestJobs = await addOrgAndUserData(
+    await JobModel.find({},{},{limit:5,sort:'-createdAt'}),
+    user,
+  );
   return (
-    <div>
-      <Hero/>
-      <Jobs/>
-    </div>
+    <>
+      <Hero />
+      <Jobs header={''} jobs={latestJobs} />
+    </>
   );
 }

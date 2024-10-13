@@ -1,26 +1,19 @@
+import JobRow from "@/app/components/JobRow";
+import type {Job} from "@/models/Job";
 
-// import type {Job} from "@/models/Job";
-
-import JobRow from "./JobRow";
-
-export default function Jobs() {
+export default function Jobs({header,jobs}:{header:string,jobs:Job[]}) {
   return (
-    <div className=" py-6 ">
+    <div className=" py-6 rounded-3xl">
       <div className="container">
-        <h2 className="font-bold mb-4 text-center text-2xl text-white">{'Recent jobs'}</h2>
-
-        <div className="flex flex-col gap-4">
-          {/* {!jobs?.length && (
+        <h2 className="font-bold mb-4 text-center text-2xl text-white">{header || 'Recent jobs'}</h2>
+       
+        <div className="flex flex-col gap-4 text-white">
+          {!jobs?.length && (
             <div>No jobs found</div>
           )}
           {jobs && jobs.map(job => (
             <JobRow jobDoc={job} />
-          ))} */}
-          <JobRow/>
-          <JobRow/>
-          <JobRow/>
-          <JobRow/>
-          <JobRow/>
+          ))}
         </div>
 
       </div>
