@@ -127,22 +127,22 @@ export default function JobForm({ orgId, jobDoc }: { orgId: string; jobDoc?: Job
           </div>
         </div>
         <div className="sm:flex">
-          <div className="w-1/3">
+          {/* <div className="w-1/3">
             <h3>Job icon</h3>
-            <ImageUpload name="jobIcon" icon={faStar} defaultValue={jobDoc?.jobIcon || ''} />
-          </div>
+            {/* <ImageUpload name="jobIcon" icon={faStar} defaultValue={jobDoc?.jobIcon || ''} /> */}
+          {/* </div>  */}
           <div className="grow">
             <h3>Contact person</h3>
             <div className="flex gap-2">
-              <div className="">
+              {/* <div className="">
                 <ImageUpload name="contactPhoto" icon={faUser} defaultValue={jobDoc?.contactPhoto || ''} />
-              </div>
-              <div className="grow flex flex-col gap-3">
+              </div> */}
+              <div className="grow flex flex-col gap-3 ">
                 <TextField.Root
                   placeholder="John Doe"
                   name="contactName"
                   defaultValue={jobDoc?.contactName || ''}
-                  className="text-gray-500 rounded-md">
+                  className="text-gray-500 rounded-md ">
                   <TextField.Slot>
                     {/* <FontAwesomeIcon icon={faUser} /> */}
                   </TextField.Slot>

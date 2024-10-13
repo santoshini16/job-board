@@ -18,6 +18,7 @@
     "@workos-inc/authkit-nextjs": "^0.12.2",
     "@workos-inc/node": "^7.27.5",
     "axios": "^1.7.7",
+    "formidable": "^3.5.1",
     "mongoose": "^8.7.1",
     "next": "14.2.15",
     "react": "^18",
